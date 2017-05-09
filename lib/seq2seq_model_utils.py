@@ -46,7 +46,7 @@ def create_model(session, args, forward_only=True):
 
 
 def dict_lookup(rev_vocab, out):
-    word = rev_vocab[out] if (out < len(rev_vocab)) else data_utils._UNK
+    word = rev_vocab[out[0]] if (out[0] < len(rev_vocab)) else data_utils._UNK
     if isinstance(word, bytes):
       word = word.decode()
     return word
